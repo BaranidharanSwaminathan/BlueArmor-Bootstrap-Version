@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueArmour-V1-Dashboard</title>
+    <link rel="Stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="Stylesheet" href="./OwnCSS/BlueArmor-version-1-Bootstrap.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body onload="myFunction()">
+    <div class="outer-bg position-fixed"></div>
+    <div class="popup-bg"></div>
+    <div class="loader-bg"></div>
+    <div class="loader"></div>
+    <header class="position-fixed">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="header-inner d-flex align-items-center">
+                    <div class="col-6">
+                        <div class="topbar-left d-flex position-relative">
+                            <div class="tb-menu-outer">
+                                <img src="./images/Menu.svg" class="menu-icon-topbar" alt="Menu">
+                            </div>
+                            <div>
+                                <img src="./images/BlueArmour-logo-2.png" class="bluearmorLogo ps-2" alt="BlueArmor-Logo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="topbar-right d-flex justify-content-end align-items-center">
+                            <div class="search-box">
+                                <ion-icon name="search-outline" class="search-icon position-absolute md hydrated" role="img" aria-label="search outline"></ion-icon>
+                                <input type="search" class="search-input ps-5 position-relative" placeholder="Search">
+                            </div>
+                            <div class="notification mx-5">
+                                <img src="./images/Notification.svg" alt="bell-icon">
+                            </div>
+                            <div class="user-details d-flex">
+                                <div class="user-name d-flex flex-column align-items-end">
+                                    <span class="name">Joanne Logan</span>
+                                    <span class="user-status">Administrator</span> 
+                                </div>
+                                <div class="user-profile d-flex align-items-center">
+                                    <img src="./images/Screenshot 2022-06-23 134619.png" alt="user-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="hamburger-menu-list position-absolute ">
+        <div class="search-box-mobile d-none">
+            <ion-icon name="search-outline" class="search-icon-mobile md hydrated" role="img" aria-label="search outline"></ion-icon>
+            <input type="search" class="search-input-mobile" placeholder="Search">
+        </div>
+        <a href="./BlueArmor-V1-Dashboard.html">
+            <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-start dashboard-menu menu-active">
+                <div class="hamburger-menu-icon  d-flex align-items-center">
+                    <img src="./images/Dashboard Icon.svg">
+                </div>
+                <span class="hambuger-menu-name ms-3">Dashboard</span>
+            </div>
+        </a>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-between explore-menu"> 
+            <div class="hamburger-menu-icon  d-flex align-items-center">
+                <img src="./images/Explore Icon.svg">
+                <span class="hambuger-menu-name  ms-3">Explore</span>
+            </div>
+            <div>
+                <img src="./images/Dropdown Icon.svg" class="dropdown-icon exp-dropdown-icon pe-2">
+            </div>
+        </div>
+        <div class="explore-submenu ps-5">
+            <div class="explore-submenu-name p-2  d-flex align-items-center submenu-active"><a href="./Identity-Management-V1.html"><span>Identity Management</span></a></div>
+            <div class="explore-submenu-name p-2  d-flex align-items-center"><a href="#"><span>Rules Management</span></a></div>
+            <div class="explore-submenu-name p-2 d-flex align-items-center"><a href="#"><span>Trust Level</span></a></div>
+            <div class="explore-submenu-name p-2  d-flex align-items-center"><a href="#"><span>Resource Management</span></a></div>
+            <div class="explore-submenu-name p-2  d-flex align-items-center"><a href="#"><span>Resource List Management</span></a></div>
+        </div>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-start">
+            <div class="hamburger-menu-icon  d-flex align-items-center">
+                <img src="./images/Management Network Icon.svg">
+            </div>
+            <span class="hambuger-menu-name  ms-3">Management Network</span>
+        </div>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-start">
+            <div class="hamburger-menu-icon  d-flex align-items-center ">
+                <img src="./images/Gateway Services Icon.svg">
+            </div>
+            <span class="hambuger-menu-name  ms-3">Gateway Services</span>
+        </div>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-between endpoint-menu">
+            <div class="hamburger-menu-icon  d-flex align-items-center">
+                <img src="./images/Endpoint Icon.svg">
+                <span class="hambuger-menu-name  ms-3">Endpoint</span>
+            </div>
+            <div>
+                <img src="./images/Dropdown Icon.svg" class="dropdown-icon pe-2">
+            </div>
+        </div>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-start">
+            <div class="hamburger-menu-icon  d-flex align-items-center">
+                <img src="./images/Maintenance Icon.svg">
+            </div>
+            <span class="hambuger-menu-name  ms-3">Dashboard</span>
+        </div>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-start">
+            <div class="hamburger-menu-icon  d-flex align-items-center">
+                <img src="./images/Monitoring Icon.svg">
+            </div>
+            <span class="hambuger-menu-name  ms-3">Monitoring</span>
+        </div>
+        <div class="hamburger-menu-items py-2 ps-3 d-flex align-items-center justify-content-start menu-items-mobile">
+            <div class="hamburger-menu-icon  d-flex align-items-center notification-mobile">
+                <img src="./images/notification-mobile.svg" alt="bell-icon">
+            </div>
+            <span class="hambuger-menu-name  ms-3 mobile-menu-name">Notification</span>
+        </div>
+    </div>
+    <div class="main-container container-fluid position-relative pt-3">
+        <div class="row">
+            <div class="dashboard-breadcrumb d-flex justify-content-between">
+                <div class="db-breadcrumb-left">
+                    <div class="dashboard">Dashboard</div>
+                    <div class="dashboard-path mt-1"><span class="home">Home  >  </span>  Dashboard</div>
+                </div>
+                <div class="dashboard-breadcrumb-right d-flex flex-column align-items-end">
+                    <div class="gateway-name">BRGW-I-431</div>
+                    <div class="connected-gateway mt-1">Connected Gateway 55</div>
+                </div>
+            </div>
+            <div class="dashboard-content  pt-3">
+                <div class="row p-3">
+                    <div class="col-xl-6 col-xs-12 p-0">
+                        <div class="manage-gateway me-3 p-3 ">
+                            <div class="dashboard-content-header pb-3">
+                                <div class="content-heading">Manage Gateway</div>
+                            </div>
+                            <div class="mg-gateway">BRGW-I-431</div>
+                            <div class="serach-add-remove-section d-flex justify-content-between align-items-center">
+                                <div class="mg-search-box my-3 position-relative">
+                                    <input type="text" class="mg-search-input ps-2 py-1" placeholder="Search...">
+                                    <img src="./images/Search.svg" class="mg-search-icon position-absolute">
+                                </div>
+                                <div class="remove-add d-flex">
+                                    <div class="remove-btn d-flex align-items-center py-2 px-3">
+                                        <ion-icon name="close-circle-outline" class="remove-icon"></ion-icon>
+                                        <span class="remove ms-2">Remove</span>
+                                    </div>
+                                    <div class="add-btn d-flex align-items-center py-2 px-4 ms-3">
+                                        <ion-icon name="add-circle-outline" class="add-icon"></ion-icon>
+                                        <span class="add ms-2">Add</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mg-gateway-list">
+                                <div class="mg-gateway-header d-flex align-items-center justify-content-between">
+                                    <div class="mg-gateway-header-left ms-2 d-flex align-items-center">
+                                        <input type="checkbox" class="checkbox">
+                                        <span class="mg-header-name-l ms-2">Gateway</span>
+                                    </div>
+                                    <div class="mg-gateway-header-right me-5">
+                                        <span class="mg-header-name-r">Certificate Expiry</span>
+                                    </div>
+                                </div>
+                                <div class="mg-gateway-items-outer">
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                    <div class="mg-gateway-items  d-flex  align-items-center justify-content-between py-2">
+                                        <div class="mg-gatway-items-left ms-2  d-flex align-items-center">
+                                            <input type="checkbox" class="checkbox">
+                                            <span class="mg-item-name-l ms-2">BRGW-I-431</span>
+                                        </div>
+                                        <div class="mg-gatway-items-right">
+                                            <span class="mg-item-name-r">05/09/2021</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="save-btn d-flex align-items-center mt-4">
+                                <button class="py-2 px-3 m-auto ">Save & Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 p-0">
+                        <div class="summary me-3 p-3">
+                            <div class="summary-heading pb-3 d-flex justify-content-between align-items-center">
+                                <div class="content-heading">Summary</div>
+                                <div class="summary-menu">
+                                    <img src="./images/Dotted Hambarekar.svg" alt="menu-icon" class="content-header-menu">
+                                </div>
+                            </div>
+                            <div class="summary-content">
+                                <div class="summary-items p-2 mb-3 d-flex  align-items-center">
+                                    <div class="sum-content-icon ms-2 d-flex justify-content-center align-items-center">
+                                        <img src="./images/ITO_light.svg">
+                                    </div>
+                                    <div class="sum-details ms-3">
+                                        <div class="sum-details-top">10.0.10.10</div>
+                                        <div class="sum-details-bottom">Host Name</div>
+                                    </div>
+                                </div>
+                                <div class="summary-items p-2 mb-3 d-flex  align-items-center">
+                                    <div class="sum-content-icon ms-2 notconfigured-icon-1 d-flex justify-content-center align-items-center">
+                                        <img src="./images/Not Configured Icon 1.svg">
+                                    </div>
+                                    <div class="sum-details ms-3">
+                                        <div class="sum-details-top">Not Configured</div>
+                                        <div class="sum-details-bottom">Host Name</div>
+                                    </div>
+                                </div>
+                                <div class="summary-items p-2 mb-3 d-flex  align-items-center">
+                                    <div class="sum-content-icon ms-2 notconfigured-icon-2 d-flex justify-content-center align-items-center" >
+                                        <img src="./images/Not Configured Icon 2.svg">
+                                    </div>
+                                    <div class="sum-details ms-3">
+                                        <div class="sum-details-top">Not Configured</div>
+                                        <div class="sum-details-bottom">Host Name</div>
+                                    </div>
+                                </div>
+                                <div class="summary-items p-2 mb-3 d-flex  align-items-center">
+                                    <div class="sum-content-icon ms-2 alpha d-flex justify-content-center align-items-center ">
+                                        <img src="./images/Alpha Icon.svg">
+                                    </div>
+                                    <div class="sum-details ms-3">
+                                        <div class="sum-details-top">Alpha-GW.infovision.io</div>
+                                        <div class="sum-details-bottom">FDQN</div>
+                                    </div>
+                                </div>
+                                <div class="summary-items p-2 mb-3 d-flex  align-items-center">
+                                    <div class="sum-content-icon ms-2 versiond d-flex justify-content-center align-items-center ">
+                                        <img src="./images/Version Icon.svg">
+                                    </div>
+                                    <div class="sum-details ms-3">
+                                        <div class="sum-details-top">4.3.1.1_1</div>
+                                        <div class="sum-details-bottom">Version</div>
+                                    </div>
+                                </div>
+                                <div class="summary-items p-2 mb-3 d-flex  align-items-center">
+                                    <div class="sum-content-icon ms-2 clock_light-1 d-flex justify-content-center align-items-center ">
+                                        <img src="./images/Clock_light Icon.svg">
+                                    </div>
+                                    <div class="sum-details ms-3">
+                                        <div class="sum-details-top">35 hrs, 20 min, 44 sec</div>
+                                        <div class="sum-details-bottom">Uptime</div>
+                                    </div>
+                                </div>
+                                <div class="summary-items px-2 py-4 mb-3 sum-gateway  d-flex  align-items-center">
+                                    <div class="expiry-box d-flex justify-content-center align-items-center">
+                                        <div class="sum-content-icon ms-2 clock_light-2 d-flex justify-content-center align-items-center ">
+                                            <img src="./images/Clock_light Icon.svg">
+                                        </div>
+                                        <div class="sum-details ms-3">
+                                            <div class="sum-details-top sum-gateway-details">Fri, Aug 25, 2022 03:15:25 PM</div>
+                                            <div class="sum-details-bottom">Gateway Certificate Expiry</div>
+                                        </div>
+                                    </div>
+                                    <div class="expiry-hover d-none">
+                                        <div class="expiry-top">Gateway Certificate</div>
+                                        <div class="expiry-bottom">Expiry 30 Days More...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 p-0">
+                        <div class="services  p-3">
+                            <div class="services-heading pb-3 d-flex justify-content-between align-items-center">
+                                <div class="content-heading">Services</div>
+                                <div class="services-menu">
+                                    <img src="./images/Dotted Hambarekar.svg" alt="menu-icon" class="content-header-menu">
+                                </div>
+                            </div>
+                            <div class="services-items p-3  mb-3 d-flex  align-items-center">
+                                <div class="ser-content-icon enabled d-flex justify-content-center align-items-center">
+                                    <img src="./images/Done_light.svg">
+                                </div>
+                                <div class="ser-details ms-3">
+                                    <div class="ser-details-top enabled-name">Enabled</div>
+                                    <div class="ser-details-bottom">Distributed Processing</div>
+                                </div>
+                            </div>
+                            <div class="services-items p-3  mb-3 d-flex  align-items-center">
+                                <div class="ser-content-icon disabled d-flex justify-content-center align-items-center">
+                                    <img src="./images/Disabled Icon.svg">
+                                </div>
+                                <div class="ser-details ms-3">
+                                    <div class="ser-details-top ">Disabled</div>
+                                    <div class="ser-details-bottom">Publisher</div>
+                                </div>
+                            </div>
+                            <div class="services-items p-3  mb-3 d-flex  align-items-center">
+                                <div class="ser-content-icon enabled d-flex justify-content-center align-items-center">
+                                    <img src="./images/Done_light.svg">
+                                </div>
+                                <div class="ser-details ms-3">
+                                    <div class="ser-details-top enabled-name">Enabled</div>
+                                    <div class="ser-details-bottom">Subscriber</div>
+                                </div>
+                            </div>
+                            <div class="services-items p-3  mb-3 d-flex  align-items-center">
+                                <div class="ser-content-icon enabled d-flex justify-content-center align-items-center">
+                                    <img src="./images/Done_light.svg">
+                                </div>
+                                <div class="ser-details ms-3">
+                                    <div class="ser-details-top enabled-name">Enabled</div>
+                                    <div class="ser-details-bottom">Layer 3</div>
+                                </div>
+                            </div>
+                            <div class="services-items p-3  mb-3 d-flex  align-items-center">
+                                <div class="ser-content-icon disabled d-flex justify-content-center align-items-center">
+                                    <img src="./images/Disabled Icon.svg">
+                                </div>
+                                <div class="ser-details ms-3">
+                                    <div class="ser-details-top">Disabled</div>
+                                    <div class="ser-details-bottom">IAS</div>
+                                </div>
+                            </div>
+                            <div class="services-items p-3  mb-3 d-flex  align-items-center">
+                                <div class="ser-content-icon disabled d-flex justify-content-center align-items-center">
+                                    <img src="./images/Disabled Icon.svg">
+                                </div>
+                                <div class="ser-details ms-3">
+                                    <div class="ser-details-top">Disabled</div>
+                                    <div class="ser-details-bottom">Remote Keying</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="floating-menu position-fixed d-flex align-items-center">
+                <div class="floating-outer">
+                    <div class="statistics-menu mb-4 d-flex justify-content-center align-items-center ">
+                        <img src="./images/Statisics Icon.svg">
+                    </div>
+                    <div class="identities-menu  mb-4 d-flex justify-content-center align-items-center">
+                        <img src="./images/Identities Icon.svg">
+                    </div>
+                    <div class="trustlevel-menu  mb-4 d-flex justify-content-center align-items-center">
+                        <img src="./images/TrustLvl Icon.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="statistics-container-outer px-3 container-fluid position-absolute ">
+                <div class="statistics-container pt-3 pb-5">
+                    <div class="statistics-breadcrumb d-flex justify-content-between">
+                        <div class="statistics">Statistics</div>
+                        <div>
+                            <img src="./images/Dashboard Close Icon.svg" alt="statistics-close-icon" class="statistics-close-icon">
+                        </div>
+                    </div>
+                    <div class="statistics-toolbar d-flex justify-content-between align-items-center">
+                        <div class="stat-toolbar-left">
+                            <div class="stat-search-box my-3 position-relative d-inline-block">
+                                <input type="text" class="stat-search-input ps-2 py-1" placeholder="Search...">
+                                <img src="./images/Search.svg" class="stat-search-icon  position-absolute">
+                            </div>
+                        </div>
+                        <div class="stat-toolbar-right me-5 d-flex flex-row align-items-center">
+                            <div class="stat-period me-3">1 Day</div>
+                            <div  class="stat-period me-3 px-3 py-2 stat-week d-flex justify-content-between align-items-center ">1 Week</div>
+                            <div class="stat-period me-3">1 Month</div>
+                            <div class="stat-period me-3">6 Month</div>
+                            <div class="stat-period stat-year">1 Year</div>
+                        </div>
+                    </div>
+                    <div class="statistics-content d-flex flex-wrap">
+                        <div class="stat-items p-3 mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-right">
+                            <div class="stat-details-top  d-flex justify-content-center align-items-center tcp-packet ">
+                                <img src="./images/Insert Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">402</span>
+                                <span class="stat-bottom-name">TCP Packet In</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3  mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-right">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center  tcp-drop">
+                                <img src="./images/icon-collisions.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">7</span>
+                                <span class="stat-bottom-name">TCP Drop In</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3  me-lg-0 mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-right">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center tcp-forward ">
+                                <img src="./images/Tcp Forward Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">0</span>
+                                <span class="stat-bottom-name">TCP Forward</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3 mt-3 d-flex flex-column justify-content-between align-items-center  mg-right-ipad">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center tcp-splice ">
+                                <img src="./images/Tcp splice Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">704263425</span>
+                                <span class="stat-bottom-name">TCP Splice</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3 me-lg-0  mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-tr mg-no-right">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center tcp-splice-tagged">
+                                <img src="./images/Tcp Splice tagged Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">29503251000</span>
+                                <span class="stat-bottom-name">TCP Splice Tagged</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3  mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-tr mg-left-ipad">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center tcp-splice-anonymous ">
+                                <img src="./images/Tcp Splice Anonymous Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">19166274399999</span>
+                                <span class="stat-bottom-name">TCP Splice Anonymous</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3  mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-tr">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center token-insert">
+                                <img src="./images/Token Insert Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">84418926</span>
+                                <span class="stat-bottom-name">Token Insert</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3 mt-3 d-flex flex-column justify-content-between align-items-center  mg-top">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center token-validate ">
+                                <img src="./images/Token Validate Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">807101193</span>
+                                <span class="stat-bottom-name">Token Validate</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3 mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-tr mg-left-ipad">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center threshold">
+                                <img src="./images/Target_duotone_line.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">424820547</span>
+                                <span class="stat-bottom-name">Threshold Not Met</span>
+                            </div>
+                        </div>
+                        <div class="stat-items p-3 mt-3 me-3 d-flex flex-column justify-content-between align-items-center  mg-tr">
+                            <div class="stat-details-top d-flex justify-content-center align-items-center token-collision">
+                                <img src="./images/Token Collision Icon.svg">
+                            </div>
+                            <div class="stat-details-bottom d-flex flex-column  align-items-center ">
+                                <span class="stat-bottom-value">910090774</span>
+                                <span class="stat-bottom-name">Token Collision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="identies-rules-container-outer  container-fluid position-absolute">
+                <div class="identies-rules-container">
+                    <div class="identities-rules-outer">
+                        <div class="identities p-3 pb-5">
+                            <div class="identities-breadcrumb pb-3 d-flex justify-content-between">
+                                <div class="identities-name">Identities</div>
+                                <div>
+                                    <img src="./images/Dashboard Close Icon.svg" alt="identies-rules-close-icon" class="identies-rules-close-icon">
+                                </div>
+                            </div>
+                            <div class="identies-content d-flex">
+                                <div class="identities-items  me-4 p-3 d-flex flex-column justify-content-between align-items-center">
+                                    <div class="identies-icon-outer d-flex justify-content-center align-items-center hr">
+                                        <img src="./images/Hr Icon.svg">
+                                    </div>
+                                    <div class="identies-value">1</div>
+                                    <div class="identies-name">HR</div>
+                                </div>
+                                <div class="identities-items  me-4 p-3 d-flex flex-column justify-content-between align-items-center">
+                                    <div class="identies-icon-outer d-flex justify-content-center align-items-center marketing">
+                                        <img src="./images/Marketing Icon.svg">
+                                    </div>
+                                    <div class="identies-value">5</div>
+                                    <div class="identies-name">Marketing</div>
+                                </div>
+                                <div class="identities-items  me-4 p-3 d-flex flex-column justify-content-between align-items-center">
+                                    <div class="identies-icon-outer d-flex justify-content-center align-items-center service">
+                                        <img src="./images/Service Icon.svg">
+                                    </div>
+                                    <div class="identies-value">3</div>
+                                    <div class="identies-name">Service</div>
+                                </div>
+                                <div class="identities-items  p-3 d-flex flex-column justify-content-between align-items-center margin-right">
+                                    <div class="identies-icon-outer d-flex justify-content-center align-items-center accounts">
+                                        <img src="./images/Accounts Icon.svg">
+                                    </div>
+                                    <div class="identies-value">2</div>
+                                    <div class="identies-name">Accounts</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rules-sec p-3">
+                            <div class="rules-breadcrumb pb-3">
+                                <div class="rules">Rules</div>
+                            </div>
+                            <div class="rules-content d-flex">
+                                <div class="rules-items  me-4 p-3 d-flex flex-column justify-content-between align-items-center">
+                                    <div class="rules-icon-outer  d-flex justify-content-center align-items-center forward">
+                                        <img src="./images/Forward Icon.svg">
+                                    </div>
+                                    <div class="rules-value">25</div>
+                                    <div class="rules-name">Forward</div>
+                                </div>
+                                <div class="rules-items  me-4 p-3 d-flex flex-column justify-content-between align-items-center">
+                                    <div class="rules-icon-outer d-flex justify-content-center align-items-center discard">
+                                        <img src="./images/Dell_light.svg">
+                                    </div>
+                                    <div class="rules-value">10</div>
+                                    <div class="rules-name">Discard</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-level-container-outer p-0 container-fluid position-absolute">
+                <div class="trust-level-container p-3">
+                    <div class="trust-level-breadcrumb pb-3 d-flex justify-content-between">
+                        <div class="trust-level">Trust-Level</div>
+                        <div>
+                            <img src="./images/Dashboard Close Icon.svg" alt="trust-level-close-icon" class="trust-level-close-icon">
+                        </div>
+                    </div>
+                    <div class="test-level-description pe-5 d-flex justify-content-end">
+                        <div class="sum-identities me-4 d-flex align-items-center">
+                            <div class="identities-box me-2"></div>
+                            <span>Sum of Identities</span>
+                        </div>
+                        <div class="sum-rules d-flex align-items-center">
+                            <div class="rules-box me-2"></div>
+                            <span>Sum of Rules</span>
+                        </div>
+                    </div>
+                    <div class="trust-level-graph mt-4 d-flex align-items-center  justify-content-center">
+                        <img src="./images/trustlevel.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="text-end px-3">
+        <span>© 2022 Bluearmor | All Rights Reserved</span>
+    </footer>
+    <script src="./JQuery/BlueArmor-V1-JS.js"></script>
+</body>
+</html>
